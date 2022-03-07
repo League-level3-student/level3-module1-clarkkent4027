@@ -13,9 +13,11 @@ public class LongChipCompetition {
      */
     private ArrayList<Beatle> theBeatles = new ArrayList<Beatle>();
 
+
     public static void main(String[] args) {
         LongChipCompetition lcc = new LongChipCompetition();
-
+lcc.initializeBeatles();
+double longestChip = 0;
     }
 
     private void initializeBeatles() {
