@@ -23,7 +23,9 @@ class ArrayListRemoveTest {
         
         // There should only be 2 worms left in the yard
         assertEquals(2, ArrayListRemove.cleanOutTheYard(stuffIFoundInTheYard).size());
-    }
+        
+        }
+    
 
     @Test
     void testRemove2() {
