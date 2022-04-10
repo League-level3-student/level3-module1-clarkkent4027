@@ -13,10 +13,11 @@ color[] sunColors = {
   color(217, 11, 139), 
   color(217, 0, 151)
 };
-Rectangle r = new Rectangle(100, 525, 400, 40);
-Rectangle r2d2 = new Rectangle(100, 425, 400, 25);
-Rectangle r3 = new Rectangle(100, 390, 400, 20);
-Rectangle r4 = new Rectangle(100, 375, 400, 15);
+Rectangle r = new Rectangle(100, 550, 400, 56);
+Rectangle r2d2 = new Rectangle(100, 500, 400, 45);
+Rectangle r3 = new Rectangle(100, 450, 400, 34);
+Rectangle r4 = new Rectangle(100, 400, 400, 23);
+Rectangle r5 = new Rectangle(100, 350, 400, 11);
 void setup() {
   // 1. Set the size of your sketch
 size(600, 800);
@@ -111,9 +112,10 @@ updatePixels();
 fill(bgColor);
 
 rect(r.x, r.y, r.w, r.h);
-//rect(r2d2.x, r2d2.y, r2d2.w, r2d2.h);
-//rect(r3.x, r3.y, r3.w, r3.h);
-//rect(r4.x, r4.y, r4.w, r4.h);
+rect(r2d2.x, r2d2.y, r2d2.w, r2d2.h);
+rect(r3.x, r3.y, r3.w, r3.h);
+rect(r4.x, r4.y, r4.w, r4.h);
+rect(r5.x, r5.y, r5.w, r5.h);
   // Do you see a section missing from the sun like in the 3rd image?
 
 
@@ -128,39 +130,45 @@ rect(r.x, r.y, r.w, r.h);
   // If there isn't a variable, declare a float variable OUTSIDE of the
   // draw function AND initialize it in the setup() function.
 r.y = r.y-0.2;
-//r2d2.y = r2d2.y-0.25;
-//r3.y = r3.y-0.25;
-//r4.y = r4.y-0.25;
+r2d2.y = r2d2.y-0.2;
+r3.y = r3.y-0.2;
+r4.y = r4.y-0.2;
+r5.y = r5.y-0.2;
   // Do you see the rectangle moving upwards?
 
   // Pick a y positon to be the location when the sections stop moving up.
   // If the rectangle's y positon is above this, move the rectangle's
   // y position back to the bottom of the sun.
-if(r.y <= 350){
-  r.y = 525;
-   r.h = 40; 
+if(r.y <= 300){
+  r.y = 550;
+   r.h = 56; 
 }
-//if(r2d2.y <= 350){
-  r2d2.y =525;
-   r2d2.h = 30; 
-//}
-//if(r3.y <= 350){
-  r3.y = 525;
-   r3.h = 30; 
-//}
-//if(r4.y <= 350){
-  r4.y = 525;
-   r4.h = 30; 
-//}
+if(r2d2.y <= 300){
+  r2d2.y =550;
+   r2d2.h = 56; 
+}
+if(r3.y <= 300){
+  r3.y = 550;
+   r3.h = 56; 
+}
+if(r4.y <= 300){
+  r4.y = 550;
+   r4.h = 56; 
+}
+if(r5.y <= 300){
+  r5.y = 550;
+   r5.h = 56; 
+}
   // Does the rectangle move back to the bottom?
                   //YES!!!!
   // Decrease the the height of the rectangle as it moves upwards.
   // Similar to the y positon, a float variable for the height needs to be
   // created if it doesn't already exist.
 r.h = r.h-0.045;
-//r2d2.h = r2d2.h-0.1;
-//r3.h = r3.h-0.1;
-//r3.h = r4.h-0.1;
+r2d2.h = r2d2.h-0.045;
+r3.h = r3.h-0.045;
+r4.h = r4.h-0.045;
+r5.h = r5.h-0.045;
   // Adjust the amount to decrease so that it disappears close to the top.
 
   // Add code to reset the height of the rectangle when it moves back to
