@@ -1,9 +1,16 @@
 package _08_California_Weather;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /*
- * OBJECTIVE:
+ * OBJECTIVE:  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
  * 1. Create a program that allows the user to search for the weather
  * conditions of a given city in California. Use the example program below
  * and the Utilities class inside this project to get the temperature data
@@ -27,19 +34,45 @@ import java.util.HashMap;
  * temperature, you can get a free API key at: https://openweathermap.org/api
  */
 
-public class CaliforniaWeather {
-    
-    void start() {
-        HashMap<String, WeatherData> weatherData = Utilities.getWeatherData();
-        
-        // All city keys have the first letter capitalized of each word
-        String cityName = Utilities.capitalizeWords( "National City" );
-        WeatherData datum = weatherData.get(cityName);
-        
-        if( datum == null ) {
-            System.out.println("Unable to find weather data for: " + cityName);
-        } else {
-            System.out.println(cityName + " is " + datum.weatherSummary + " with a temperature of " + datum.temperatureF + " F");
-        }
-    }
+public class CaliforniaWeather implements ActionListener {
+	JButton button1 = new JButton("Search a City");
+	JButton button2 = new JButton("Search by Weather");
+	JButton button3 = new JButton("Search by Temp.");
+	void start() {
+		HashMap<String, WeatherData> weatherData = Utilities.getWeatherData();
+
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		
+		panel.setSize(600, 600);
+		panel.add(button1);
+		panel.add(button2);
+		panel.add(button3);
+		button1.addActionListener(this);
+		button2.addActionListener(this);
+		button3.addActionListener(this);
+		frame.add(panel);
+		frame.addMouseListener(null);
+		frame.setVisible(true);
+
+		// All city keys have the first letter capitalized of each word
+		String cityName = Utilities.capitalizeWords("National City");
+		WeatherData datum = weatherData.get(cityName);
+
+		if (datum == null) {
+			System.out.println("Unable to find weather data for: " + cityName);
+		} else {
+			System.out.println(
+					cityName + " is " + datum.weatherSummary + " with a temperature of " + datum.temperatureF + " F");
+		}
+	
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource()== button1) {
+		String city = JOptionPane.showInputDialog(null, "Please type in a city in California.");
+		
+		}
+	}
 }
